@@ -1,12 +1,16 @@
 <template>
   <h1>OneCategory</h1>
+  <p>{{ liststore.stores }}</p>
 </template>
 
 <script>
-// import ***** from "./*****/*******";
-
+import { useListStore } from "@/store/storelist";
 export default {
   name: "OneCategory",
+  setup() {
+    const liststore = useListStore();
+    return { liststore };
+  },
   // data() {
   //     return {
 
@@ -21,4 +25,8 @@ export default {
 };
 </script>
 
-<!-- <style lang="scss"></style> -->
+<style scoped lang="scss">
+* {
+  color: red;
+}
+</style>
