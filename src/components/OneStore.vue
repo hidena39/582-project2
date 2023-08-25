@@ -2,6 +2,16 @@
   <div class="storeCard">
     <h1>OneStore</h1>
     <p>{{ storeName }}</p>
+    <div
+      @click="
+        this.$router.push({
+          name: 'each-store',
+          params: { storename: storeName },
+        })
+      "
+    >
+      EachStore
+    </div>
   </div>
 </template>
 
@@ -10,15 +20,10 @@
 
 export default {
   name: "OneStore",
-  props: {
-    storeName: {
-      type: String,
-    },
-  },
+  // props: {
+  // },
   // setup() {
-  //   const i = 0;
   //   const liststore = useListStore();
-  //   const storeName = liststore.stores[i].storename;
   //   return { storeName };
   // },
   // data() {
@@ -27,7 +32,6 @@ export default {
   //     };
   // },
   // components: {
-
   // },
   // methods: {
 

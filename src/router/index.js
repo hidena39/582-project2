@@ -9,9 +9,10 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/each-store",
+    path: "/each-store/:storename",
     name: "each-store",
     component: EachStoreView,
+    props: true,
   },
 ];
 
