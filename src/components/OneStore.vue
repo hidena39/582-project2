@@ -2,7 +2,7 @@
   <div class="storeCard">
     <h1>OneStore</h1>
     <p>{{ storeName }}</p>
-    <div
+    <button
       @click="
         this.$router.push({
           name: 'each-store',
@@ -11,7 +11,7 @@
       "
     >
       EachStore
-    </div>
+    </button>
   </div>
 </template>
 
@@ -20,8 +20,10 @@
 
 export default {
   name: "OneStore",
-  // props: {
-  // },
+  props: {
+    storeName: String,
+    //receiving from StoreList.vue to show {{ storeName }}}
+  },
   // setup() {
   //   const liststore = useListStore();
   //   return { storeName };

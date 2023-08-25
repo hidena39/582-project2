@@ -31,6 +31,7 @@ There are
 - [] Create Unit tests
 - [] Code the app
 - [] Code and run unit tests
+- [] Style (responsive design)
 - [] Make Readme.md
 
 ## Project setup
