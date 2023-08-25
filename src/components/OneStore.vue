@@ -1,12 +1,26 @@
 <template>
-  <h1>OneStore</h1>
+  <div class="storeCard">
+    <h1>OneStore</h1>
+    <p>{{ storeName }}</p>
+  </div>
 </template>
 
 <script>
-// import ***** from "./*****/*******";
+// import { useListStore } from "@/store/storelist";
 
 export default {
   name: "OneStore",
+  props: {
+    storeName: {
+      type: String,
+    },
+  },
+  // setup() {
+  //   const i = 0;
+  //   const liststore = useListStore();
+  //   const storeName = liststore.stores[i].storename;
+  //   return { storeName };
+  // },
   // data() {
   //     return {
 
@@ -21,4 +35,12 @@ export default {
 };
 </script>
 
-<!-- <style lang="scss"></style> -->
+<style scoped lang="scss">
+* {
+  color: blue;
+}
+div.storeCard {
+  width: 200px;
+  border: 1px solid blue;
+}
+</style>

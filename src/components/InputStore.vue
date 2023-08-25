@@ -11,7 +11,6 @@
 </template>
 
 <script>
-// import ***** from "./*****/*******";
 import { useListStore } from "@/store/storelist";
 
 export default {
