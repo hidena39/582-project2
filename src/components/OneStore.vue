@@ -21,6 +21,7 @@
 export default {
   name: "OneStore",
   props: {
+    //definitng the param storename: storeName is a string
     storeName: String,
     //receiving from StoreList.vue to show {{ storeName }}}
   },
