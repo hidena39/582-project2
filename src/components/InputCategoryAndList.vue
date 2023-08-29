@@ -40,9 +40,10 @@ export default {
       const storeName = this.$route.params.storename;
       const allcategories = [];
       for (const store of this.liststore.stores) {
-        if (store.storename === storeName) {
+        //Ehnr categories are empty, it gives an error. So making it check if there are categories
+        if (store.storename === storeName && store.categories) {
           for (let i = 0; i < store.categories.length; i++) {
-            allcategories.push(store.categories[i]);
+            allcategories.push(store.categories[i].category);
           }
         }
       }
@@ -69,7 +70,7 @@ export default {
         `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/each-store/${storename}`,
         {
           method: "post",
-          body: JSON.stringify({ category: categoryToAdd }),
+          body: JSON.stringify({ category: categoryToAdd, items: [] }),
           headers: {
             "Content-Type": "application/json",
             // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -121,16 +122,24 @@ export default {
           console.log(data);
           document.querySelector("#categories").value = "";
           document.querySelector("#item").value = "";
-          // fetch(
-          //   `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/each-store/${storename}/item`
-          // )
-          //   .then((response) => response.json())
-          //   .then((json) => {
-          //     console.log(json);
-          //     this.liststore.stores = json;
-          //   });
+          fetch(
+            `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/each-store/${storename}/item`
+          )
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+              this.liststore.stores = json;
+            });
         });
     },
+  },
+  created() {
+    fetch("https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        this.liststore.stores = json;
+      });
   },
 };
 </script>
