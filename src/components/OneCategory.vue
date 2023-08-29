@@ -1,6 +1,9 @@
 <template>
   <h1>{{ oneCategory }}</h1>
-  <div></div>
+
+  <ul>
+    <li v-for="item in items" :key="item">{{ item }}</li>
+  </ul>
 </template>
 
 <script>
@@ -15,15 +18,17 @@ export default {
     return { liststore };
   },
   computed: {
-    Items() {
+    items() {
       const storeName = this.$route.params.storename;
       const allItems = [];
       for (const store of this.liststore.stores) {
-        //Ehnr categories are empty, it gives an error. So making it check if there are categories
+        //When categories are empty, it gives an error. So making it check if there are categories
         if (store.storename === storeName && store.categories) {
-          if (categories.cateory === this.oneCategory) {
-            for (let i = 0; i < store.categories.length; i++) {
-              allItems.push(store.categories[i].items);
+          for (let i = 0; i < store.categories.length; i++) {
+            if (store.categories[i].category === this.oneCategory) {
+              for (const item of store.categories[i].items) {
+                allItems.push(item);
+              }
             }
           }
         }
@@ -32,11 +37,7 @@ export default {
       return allItems;
     },
   },
-  // data() {
-  //     return {
 
-  //     };
-  // },
   // components: {
 
   // },
