@@ -2,7 +2,12 @@
   <div class="listcontainer">
     <h1>{{ oneCategory }}</h1>
     <ul>
-      <OneItem v-for="item in items" :key="item" :oneItem="item" />
+      <OneItem
+        v-for="item in items"
+        :key="item"
+        :oneItem="item"
+        :oneCategory="oneCategory"
+      />
     </ul>
   </div>
 </template>
