@@ -41,7 +41,6 @@ export default {
         })
         .then((data) => {
           console.log(data);
-          document.querySelector("#category").value = "";
           fetch(
             `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/each-store/${storename}/deleteitem`
           )
