@@ -1,15 +1,20 @@
 <template>
-  <h1>{{ oneCategory }}</h1>
-
-  <ul>
-    <li v-for="item in items" :key="item">{{ item }}</li>
-  </ul>
+  <div class="listcontainer">
+    <h1>{{ oneCategory }}</h1>
+    <ul>
+      <OneItem v-for="item in items" :key="item" :oneItem="item" />
+    </ul>
+  </div>
 </template>
 
 <script>
 import { useListStore } from "@/store/storelist";
+import OneItem from "@/components/OneItem.vue";
 export default {
   name: "OneCategory",
+  components: {
+    OneItem,
+  },
   props: {
     oneCategory: String,
   },
@@ -37,18 +42,26 @@ export default {
       return allItems;
     },
   },
-
-  // components: {
-
-  // },
-  // methods: {
-
-  // },
 };
 </script>
 
 <style scoped lang="scss">
 * {
   color: red;
+  padding: 0;
+}
+.listcontainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+li {
+  list-style: none;
+  display: block;
+  background-color: yellow;
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  gap: 1rem;
 }
 </style>
