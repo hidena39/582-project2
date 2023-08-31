@@ -12,11 +12,12 @@
     >
       EachStore
     </button>
+    <button class="deleteButton" @click="deleteStore">delete</button>
   </div>
 </template>
 
 <script>
-// import { useListStore } from "@/store/storelist";
+import { useListStore } from "@/store/storelist";
 
 export default {
   name: "OneStore",
@@ -25,10 +26,10 @@ export default {
     storeName: String,
     //receiving from StoreList.vue to show {{ storeName }}}
   },
-  // setup() {
-  //   const liststore = useListStore();
-  //   return { storeName };
-  // },
+  setup() {
+    const liststore = useListStore();
+    return { liststore };
+  },
   // data() {
   //     return {
 
@@ -36,9 +37,37 @@ export default {
   // },
   // components: {
   // },
-  // methods: {
-
-  // },
+  methods: {
+    deleteStore() {
+      console.log("submitted");
+      const storename = this.storeName;
+      fetch(
+        `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/deleteOneStore`,
+        {
+          method: "post",
+          body: JSON.stringify({ storename: storename }),
+          headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }
+      )
+        .then((res) => {
+          return res.text();
+        })
+        .then((data) => {
+          console.log(data);
+          fetch(
+            `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/`
+          )
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+              this.liststore.stores = json;
+            });
+        });
+    },
+  },
 };
 </script>
 

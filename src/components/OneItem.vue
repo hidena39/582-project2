@@ -2,7 +2,7 @@
   <li>
     {{ oneItem }}
 
-    <div><p @click="deleteItem">delete</p></div>
+    <div><button class="deleteButton" @click="deleteItem">delete</button></div>
   </li>
 </template>
 
@@ -54,14 +54,7 @@ export default {
   },
 };
 </script>
-
+<!-- 
 <style scoped lang="scss">
-div {
-  width: 80px;
-  margin: 0 auto;
-  padding: none;
-  background: red;
-  color: white;
-  cursor: pointer;
-}
-</style>
+
+</style> -->

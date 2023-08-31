@@ -23,4 +23,9 @@ nav {
     }
   }
 }
+.deleteButton {
+  background: red;
+  color: white;
+  cursor: pointer;
+}
 </style>
