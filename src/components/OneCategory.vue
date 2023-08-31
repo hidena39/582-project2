@@ -7,8 +7,8 @@
     <ul>
       <OneItem
         v-for="item in items"
-        :key="item"
-        :oneItem="item"
+        :key="item.item"
+        :oneItem="item.item"
         :oneCategory="oneCategory"
       />
     </ul>
@@ -93,7 +93,6 @@ export default {
 li {
   list-style: none;
   display: block;
-  border: black solid 2px;
 }
 ul {
   display: grid;

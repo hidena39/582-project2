@@ -1,8 +1,9 @@
 <template>
   <li>
-    {{ oneItem }}
+    <div class="oneItem" @click="changeStatus">{{ oneItem }}</div>
     <div><button class="deleteButton" @click="deleteItem">delete</button></div>
     <div class="purchased"></div>
+    {{ purchaseStatus }}
   </li>
 </template>
 
@@ -17,6 +18,26 @@ export default {
   setup() {
     const liststore = useListStore();
     return { liststore };
+  },
+  computed: {
+    purchaseStatus() {
+      const storeName = this.$route.params.storename;
+      let purchased = false;
+      for (const store of this.liststore.stores) {
+        if (store.storename === storeName) {
+          for (const category of store.categories) {
+            if (category.category === this.oneCategory) {
+              for (const item of category.items) {
+                if (item.item === this.oneItem) {
+                  purchased = item.purchased;
+                }
+              }
+            }
+          }
+        }
+      }
+      return purchased;
+    },
   },
   methods: {
     deleteItem() {
@@ -51,6 +72,10 @@ export default {
             });
         });
     },
+    changeStatus() {
+      console.log("hi");
+      console.log(this.purchaseStatus);
+    },
   },
 };
 </script>
@@ -59,6 +84,11 @@ export default {
 li {
   position: relative;
 }
+.oneItem {
+  padding: 1rem;
+  border: black solid 2px;
+  cursor: pointer;
+}
 .purchased {
   position: absolute;
   width: 150px;
@@ -66,5 +96,6 @@ li {
   background-color: rgb(84, 170, 204, 0.5);
   top: 0;
   right: 0;
+  display: none;
 }
 </style>
