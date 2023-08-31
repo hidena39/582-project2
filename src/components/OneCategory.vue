@@ -1,6 +1,9 @@
 <template>
   <div class="listcontainer">
-    <h1>{{ oneCategory }}</h1>
+    <h1 @click="deleteCategory">{{ oneCategory }}</h1>
+    <button class="deleteButton" @click="deleteCategory">
+      delete category
+    </button>
     <ul>
       <OneItem
         v-for="item in items"
@@ -27,6 +30,38 @@ export default {
     const liststore = useListStore();
     return { liststore };
   },
+  methods: {
+    deleteCategory() {
+      console.log("submitted");
+      const oneCategory = this.oneCategory;
+      const storename = this.$route.params.storename;
+      fetch(
+        `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/each-store/${storename}/deletecategory`,
+        {
+          method: "post",
+          body: JSON.stringify({ category: oneCategory }),
+          headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }
+      )
+        .then((res) => {
+          return res.text();
+        })
+        .then((data) => {
+          console.log(data);
+          fetch(
+            `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/`
+          )
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+              this.liststore.stores = json;
+            });
+        });
+    },
+  },
   computed: {
     items() {
       const storeName = this.$route.params.storename;
@@ -51,10 +86,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-* {
-  color: red;
-  padding: 0;
-}
 .listcontainer {
   max-width: 1000px;
   margin: 0 auto;
@@ -62,7 +93,7 @@ export default {
 li {
   list-style: none;
   display: block;
-  background-color: yellow;
+  border: black solid 2px;
 }
 ul {
   display: grid;

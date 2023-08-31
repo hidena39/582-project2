@@ -1,8 +1,8 @@
 <template>
   <li>
     {{ oneItem }}
-
     <div><button class="deleteButton" @click="deleteItem">delete</button></div>
+    <div class="purchased"></div>
   </li>
 </template>
 
@@ -54,7 +54,17 @@ export default {
   },
 };
 </script>
-<!-- 
-<style scoped lang="scss">
 
-</style> -->
+<style scoped lang="scss">
+li {
+  position: relative;
+}
+.purchased {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(84, 170, 204, 0.5);
+  top: 0;
+  right: 0;
+}
+</style>
