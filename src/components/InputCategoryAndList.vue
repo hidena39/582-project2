@@ -84,7 +84,7 @@ export default {
           console.log(data);
           document.querySelector("#category").value = "";
           fetch(
-            `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/each-store/${storename}`
+            `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/`
           )
             .then((response) => response.json())
             .then((json) => {
@@ -123,7 +123,7 @@ export default {
           document.querySelector("#categories").value = "";
           document.querySelector("#item").value = "";
           fetch(
-            `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/each-store/${storename}/item`
+            `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/`
           )
             .then((response) => response.json())
             .then((json) => {
