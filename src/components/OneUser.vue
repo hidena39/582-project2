@@ -1,5 +1,7 @@
 <template>
-  <button @click="currentUser()">{{ oneUser }}</button>
+  <button class="userButton" @click="currentUser()" :class="{chosenUser: oneUser === listuser.currentUser}">
+    {{ oneUser }}
+  </button>
 </template>
 
 <script>
@@ -24,11 +26,26 @@ export default {
       console.log("color", this.listuser.currentUserColor);
       console.log("Auth", this.listuser.isAuthorized);
     },
+    isItChosenButton() {
+      for (let i = 0; i < this.listuser.users.length; i++) {
+        if (this.users[i].username === this.listuser.currentUser) {
+          if (this.users[i].role === "Admin") {
+            isItAdmin = true;
+          } else {
+            isItAdmin = false;
+          }
+        }
+      }
+    },
   },
-  
 };
 </script>
 
-<!-- <style scoped lang="scss">
-
-</style> -->
+<style scoped lang="scss">
+.userButton {
+  cursor: pointer;
+}
+.chosenUser {
+  border: 3px solid pink;
+}
+</style>

@@ -1,7 +1,15 @@
 <template>
   <li>
     <div class="oneItem" @click="changeStatus">{{ oneItem }}</div>
-    <div><button class="deleteButton" v-if="this.listuser.isAuthorized" @click="deleteItem">delete</button></div>
+    <div>
+      <button
+        class="deleteButton"
+        v-if="this.listuser.isAuthorized"
+        @click="deleteItem"
+      >
+        delete
+      </button>
+    </div>
     <div class="purchased" v-if="purchaseStatus" @click="changeStatus"></div>
     <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
   </li>

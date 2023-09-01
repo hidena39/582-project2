@@ -12,7 +12,13 @@
     >
       EachStore
     </button>
-    <button class="deleteButton" v-if="this.listuser.isAuthorized" @click="deleteStore">delete</button>
+    <button
+      class="deleteButton"
+      v-if="this.listuser.isAuthorized"
+      @click="deleteStore"
+    >
+      delete
+    </button>
   </div>
 </template>
 
