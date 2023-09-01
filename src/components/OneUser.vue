@@ -25,6 +25,7 @@ export default {
       console.log("Auth", this.listuser.isAuthorized);
     },
   },
+  
 };
 </script>
 
