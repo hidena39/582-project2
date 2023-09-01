@@ -2,13 +2,13 @@
   <h1>InputCategoryAndList</h1>
   <p>{{ storename }}</p>
   <!-- send category -->
-  <form @submit.prevent="sendCategoryToDB()">
+  <form v-if="this.listuser.isAuthorized" @submit.prevent="sendCategoryToDB()">
     <label for="category">Category</label>
     <input type="text" id="category" required />
     <input id="submit" type="submit" value="Add Category" />
   </form>
   <!-- send category and item -->
-  <form @submit.prevent="sendItemToDB()">
+  <form v-if="this.listuser.isAuthorized" @submit.prevent="sendItemToDB()">
     <label for="categories">Categories</label>
     <select name="categories" id="categories" required>
       <option value="">Please Select</option>
@@ -24,12 +24,14 @@
 
 <script>
 import { useListStore } from "@/store/storelist";
+import { useUserStore } from "@/store/userlist";
 
 export default {
   name: "InputCategoryAndList",
   setup() {
     const liststore = useListStore();
-    return { liststore };
+    const listuser = useUserStore();
+    return { liststore, listuser };
   },
   props: {
     storename: String,

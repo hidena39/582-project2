@@ -12,12 +12,13 @@
     >
       EachStore
     </button>
-    <button class="deleteButton" @click="deleteStore">delete</button>
+    <button class="deleteButton" v-if="this.listuser.isAuthorized" @click="deleteStore">delete</button>
   </div>
 </template>
 
 <script>
 import { useListStore } from "@/store/storelist";
+import { useUserStore } from "@/store/userlist";
 
 export default {
   name: "OneStore",
@@ -28,7 +29,8 @@ export default {
   },
   setup() {
     const liststore = useListStore();
-    return { liststore };
+    const listuser = useUserStore();
+    return { liststore, listuser };
   },
   // data() {
   //     return {

@@ -1,7 +1,7 @@
 <template>
   <li>
     <div class="oneItem" @click="changeStatus">{{ oneItem }}</div>
-    <div><button class="deleteButton" @click="deleteItem">delete</button></div>
+    <div><button class="deleteButton" v-if="this.listuser.isAuthorized" @click="deleteItem">delete</button></div>
     <div class="purchased" v-if="purchaseStatus" @click="changeStatus"></div>
     <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
   </li>
@@ -9,6 +9,7 @@
 
 <script>
 import { useListStore } from "@/store/storelist";
+import { useUserStore } from "@/store/userlist";
 export default {
   name: "OneItem",
   props: {
@@ -17,7 +18,8 @@ export default {
   },
   setup() {
     const liststore = useListStore();
-    return { liststore };
+    const listuser = useUserStore();
+    return { liststore, listuser };
   },
   computed: {
     purchaseStatus() {

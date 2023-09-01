@@ -1,7 +1,7 @@
 <template>
   <div class="listcontainer">
     <h1 @click="deleteCategory">{{ oneCategory }}</h1>
-    <button class="deleteButton" @click="deleteCategory">
+    <button class="deleteButton" v-if="this.listuser.isAuthorized" @click="deleteCategory">
       delete category
     </button>
     <ul>
@@ -17,6 +17,7 @@
 
 <script>
 import { useListStore } from "@/store/storelist";
+import { useUserStore } from "@/store/userlist";
 import OneItem from "@/components/OneItem.vue";
 export default {
   name: "OneCategory",
@@ -28,7 +29,8 @@ export default {
   },
   setup() {
     const liststore = useListStore();
-    return { liststore };
+    const listuser = useUserStore();
+    return { liststore, listuser };
   },
   methods: {
     deleteCategory() {

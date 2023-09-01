@@ -1,6 +1,6 @@
 <template>
   <h1>InputStore</h1>
-  <form @submit.prevent="sendStoreToDB">
+  <form v-if="this.listuser.isAuthorized" @submit.prevent="sendStoreToDB">
     <label for="storename">Store Name</label>
     <input type="text" id="storename" required />
     <input id="submit" type="submit" value="Add store" />
@@ -12,12 +12,14 @@
 
 <script>
 import { useListStore } from "@/store/storelist";
+import { useUserStore } from "@/store/userlist";
 
 export default {
   name: "InputStore",
   setup() {
     const liststore = useListStore();
-    return { liststore };
+    const listuser = useUserStore();
+    return { liststore, listuser };
   },
   // data() {
   //     return {
