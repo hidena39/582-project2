@@ -1,7 +1,17 @@
 <template>
+  <UserList />
   <router-view />
 </template>
 
+<script>
+import UserList from "@/components/UserList.vue";
+export default {
+  name: "App",
+  components: {
+    UserList,
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

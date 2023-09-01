@@ -13,6 +13,7 @@
 import InputCategoryAndList from "@/components/InputCategoryAndList.vue";
 import AllCategories from "@/components/AllCategories.vue";
 import { useListStore } from "@/store/storelist";
+import { useUserStore } from "@/store/userlist";
 
 export default {
   name: "EachStoreView",
@@ -21,8 +22,9 @@ export default {
     //for params
   },
   setup() {
+    const listuser = useUserStore();
     const liststore = useListStore();
-    return { liststore };
+    return { listuser, liststore };
   },
   data() {
     return {};
@@ -32,6 +34,24 @@ export default {
     AllCategories,
   },
   methods: {},
+  created() {
+    //fetching users
+    fetch("https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        this.liststore.stores = json;
+      });
+    //fetching stores
+    fetch(
+      "https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/users"
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        this.listuser.users = json;
+      });
+  },
 };
 </script>
 
