@@ -10,7 +10,12 @@
         delete
       </button>
     </div>
-    <div class="purchased" v-if="purchaseStatus" @click="changeStatus"></div>
+    <div
+      class="purchased"
+      v-if="purchaseStatus"
+      @click="changeStatus"
+      :style="{ backgroundColor: listuser.currentUserColor }"
+    ></div>
     <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
   </li>
 </template>
@@ -155,7 +160,7 @@ li {
   position: absolute;
   width: 150px;
   height: 40px;
-  background-color: rgb(84, 170, 204, 0.5);
+  opacity: 0.5;
   top: 0;
   right: 0;
   cursor: pointer;

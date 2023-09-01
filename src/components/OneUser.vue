@@ -1,5 +1,9 @@
 <template>
-  <button class="userButton" @click="currentUser()" :class="{chosenUser: oneUser === listuser.currentUser}">
+  <button
+    class="userButton"
+    @click="currentUser()"
+    :class="{ chosenUser: oneUser === listuser.currentUser }"
+  >
     {{ oneUser }}
   </button>
 </template>
