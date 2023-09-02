@@ -14,7 +14,7 @@
       class="purchased"
       v-if="purchaseStatus"
       @click="changeStatus"
-      :style="{ backgroundColor: listuser.currentUserColor }"
+      :style="{ backgroundColor: colorOfThePurchased }"
     ></div>
     <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
   </li>
@@ -55,21 +55,48 @@ export default {
     },
     purchasedTime() {
       const storeName = this.$route.params.storename;
-      let clickeTime = "";
+      let clickedTime = "";
       for (const store of this.liststore.stores) {
         if (store.storename === storeName) {
           for (const category of store.categories) {
             if (category.category === this.oneCategory) {
               for (const item of category.items) {
                 if (item.item === this.oneItem) {
-                  clickeTime = item.time;
+                  clickedTime = item.time;
                 }
               }
             }
           }
         }
       }
-      return clickeTime;
+      return clickedTime;
+    },
+    purchasedByWho() {
+      const storeName = this.$route.params.storename;
+      let whoPurchased = "";
+      for (const store of this.liststore.stores) {
+        if (store.storename === storeName) {
+          for (const category of store.categories) {
+            if (category.category === this.oneCategory) {
+              for (const item of category.items) {
+                if (item.item === this.oneItem) {
+                  whoPurchased = item.byWho;
+                }
+              }
+            }
+          }
+        }
+      }
+      return whoPurchased;
+    },
+    colorOfThePurchased() {
+      let theColor = "";
+      for (const user of this.listuser.users) {
+        if (user.username === this.purchasedByWho) {
+          theColor = user.color;
+        }
+      }
+      return theColor;
     },
   },
   methods: {
@@ -113,6 +140,7 @@ export default {
       const oneCategory = this.oneCategory;
       const oneItem = this.oneItem;
       const changedStatus = !purchaseStatus;
+      const personWhoBought = this.listuser.currentUser;
       fetch(
         `https://reimagined-eureka-7qvqxw66r4w3pww9-3000.app.github.dev/each-store/${storename}/changestatus`,
         {
@@ -121,6 +149,7 @@ export default {
             category: oneCategory,
             item: oneItem,
             purchased: changedStatus,
+            byWho: personWhoBought,
           }),
           headers: {
             "Content-Type": "application/json",

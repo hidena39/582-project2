@@ -3,22 +3,36 @@
     class="userButton"
     @click="currentUser()"
     :class="{ chosenUser: oneUser === listuser.currentUser }"
+    :style="{ backgroundColor: UserColor }"
   >
     {{ oneUser }}
   </button>
 </template>
 
 <script>
+import { useListStore } from "@/store/storelist";
 import { useUserStore } from "@/store/userlist";
 export default {
   name: "OneUser",
   setup() {
+    const liststore = useListStore();
     const listuser = useUserStore();
-    return { listuser };
+    return { liststore, listuser };
   },
 
   props: {
     oneUser: String,
+  },
+  computed: {
+    UserColor() {
+      let theColor = "";
+      for (const user of this.listuser.users) {
+        if (user.username === this.oneUser) {
+          theColor = user.color;
+        }
+      }
+      return theColor;
+    },
   },
   methods: {
     currentUser() {
