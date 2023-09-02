@@ -1,6 +1,5 @@
 <template>
   <div class="storeCard">
-    <h1>OneStore</h1>
     <p>{{ storeName }}</p>
     <button
       @click="
@@ -80,11 +79,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-* {
-  color: blue;
-}
 div.storeCard {
-  width: 200px;
+  width: 150px;
   border: 1px solid blue;
 }
 </style>
