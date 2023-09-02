@@ -1,5 +1,8 @@
 <template>
-  <h1>HomeView</h1>
+  <div id="titleBox">
+    <div id="iconTeam"><img src="@/assets/family.png" alt="" /></div>
+    <h1>Team Shop!!</h1>
+  </div>
   <InputStore />
   <StoreList />
 </template>
@@ -41,3 +44,27 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+div#titleBox {
+  min-width: 300px;
+  background-color: rgb(248, 199, 199);
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div#iconTeam {
+    width: 100%;
+    height: auto;
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 300px;
+      height: auto;
+    }
+  }
+}
+</style>

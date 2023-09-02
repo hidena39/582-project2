@@ -1,9 +1,11 @@
 <template>
-  <OneUser
-    v-for="(store, index) in userstore.users"
-    :key="store._id"
-    :oneUser="currentUserName(index)"
-  />
+  <div id="userlist">
+    <OneUser
+      v-for="(store, index) in userstore.users"
+      :key="store._id"
+      :oneUser="currentUserName(index)"
+    />
+  </div>
 </template>
 
 <script>
@@ -25,7 +27,10 @@ export default {
   },
 };
 </script>
-<!-- 
-<style scoped lang="scss">
 
-</style> -->
+<style scoped lang="scss">
+div#userlist {
+  width: max-content;
+  margin: 1rem auto 0 auto;
+}
+</style>

@@ -1,13 +1,11 @@
 <template>
-  <h1>InputStore</h1>
-  <form v-if="this.listuser.isAuthorized" @submit.prevent="sendStoreToDB">
-    <label for="storename">Store Name</label>
-    <input type="text" id="storename" required />
-    <input id="submit" type="submit" value="Add store" />
-  </form>
-
-  {{ liststore.stores }}
-  <!-- if there are no same store -->
+  <div v-if="this.listuser.isAuthorized" id="inputStoreBox">
+    <h2>Add stores</h2>
+    <form @submit.prevent="sendStoreToDB">
+      <input type="text" id="storename" placeholder="Store Name" required />
+      <input class="submit" type="submit" value="Add store" />
+    </form>
+  </div>
 </template>
 
 <script>
@@ -63,7 +61,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
-* {
-  color: green;
+div#inputStoreBox {
+  min-width: 300px;
+  background-color: rgb(217, 248, 199);
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 2rem;
+  label,
+  input {
+    display: block;
+  }
+  input {
+    width: 100%;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    margin: 1rem auto;
+  }
 }
 </style>

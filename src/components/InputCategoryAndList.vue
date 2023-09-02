@@ -5,7 +5,7 @@
   <form v-if="this.listuser.isAuthorized" @submit.prevent="sendCategoryToDB()">
     <label for="category">Category</label>
     <input type="text" id="category" required />
-    <input id="submit" type="submit" value="Add Category" />
+    <input class="submit" type="submit" value="Add Category" />
   </form>
   <!-- send category and item -->
   <form v-if="this.listuser.isAuthorized" @submit.prevent="sendItemToDB()">
@@ -18,7 +18,7 @@
     </select>
     <label for="item">Item</label>
     <input type="text" id="item" required />
-    <input id="submit" type="submit" value="Add Item to the List" />
+    <input class="submit" type="submit" value="Add Item to the List" />
   </form>
 </template>
 

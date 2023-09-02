@@ -62,8 +62,12 @@ export default {
 <style scoped lang="scss">
 .userButton {
   cursor: pointer;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  margin: 0 1rem;
+  border-radius: 1rem;
 }
 .chosenUser {
-  border: 3px solid pink;
+  border: 3px solid black;
 }
 </style>

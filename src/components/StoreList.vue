@@ -1,11 +1,13 @@
 <template>
-  <h1>StoreList</h1>
-  <div class="storeCardList">
-    <OneStore
-      v-for="(store, index) in liststore.stores"
-      :key="store._id"
-      :storeName="currentStoreName(index)"
-    />
+  <div id="storeListBox">
+    <h2>StoreList</h2>
+    <div class="storeCardList">
+      <OneStore
+        v-for="(store, index) in liststore.stores"
+        :key="store._id"
+        :storeName="currentStoreName(index)"
+      />
+    </div>
   </div>
 </template>
 
@@ -34,8 +36,14 @@ export default {
 </script>
 <style scoped lang="scss">
 * {
-  color: brown;
   display: grid;
+}
+div#storeListBox {
+  min-width: 300px;
+  background-color: rgb(199, 202, 248);
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 2rem;
 }
 div.storeCardList {
   display: grid;
