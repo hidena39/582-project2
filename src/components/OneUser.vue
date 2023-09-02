@@ -34,9 +34,9 @@ export default {
       for (let i = 0; i < this.listuser.users.length; i++) {
         if (this.users[i].username === this.listuser.currentUser) {
           if (this.users[i].role === "Admin") {
-            isItAdmin = true;
+            this.listuser.isItAdmin = true;
           } else {
-            isItAdmin = false;
+            this.listuser.isItAdmin = false;
           }
         }
       }
