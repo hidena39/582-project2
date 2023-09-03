@@ -1,6 +1,6 @@
 <template>
   <div class="listcontainer">
-    <h1 @click="deleteCategory">{{ oneCategory }}</h1>
+    <h3 @click="deleteCategory">{{ oneCategory }}</h3>
     <button
       class="deleteButton"
       v-if="this.listuser.isAuthorized"

@@ -1,8 +1,7 @@
 <template>
   <nav>
-    <router-link to="/"><button>Home</button></router-link>
+    <router-link to="/"><button id="homeButton">Home</button></router-link>
   </nav>
-  <h1>EachStoreView</h1>
   <p>{{ this.$route.params }}</p>
   <h2>{{ storename }}</h2>
   <InputCategoryAndList />
@@ -55,4 +54,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+div#homeButton {
+  display: block;
+}
+</style>

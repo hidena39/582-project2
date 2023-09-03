@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.listuser.isAuthorized" id="inputStoreBox">
+  <div v-if="this.listuser.isAuthorized" class="boxes" id="inputStoreBox">
     <h2>Add stores</h2>
     <form @submit.prevent="sendStoreToDB">
       <input type="text" id="storename" placeholder="Store Name" required />
@@ -62,21 +62,6 @@ export default {
 
 <style scoped lang="scss">
 div#inputStoreBox {
-  min-width: 300px;
-  background-color: rgb(217, 248, 199);
-  border-radius: 2rem;
-  margin: 1rem;
-  padding: 2rem;
-  label,
-  input {
-    display: block;
-  }
-  input {
-    width: 100%;
-    height: 1.5rem;
-    border-radius: 0.5rem;
-    padding: 0 1rem;
-    margin: 1rem auto;
-  }
+  border: 2px dashed black;
 }
 </style>

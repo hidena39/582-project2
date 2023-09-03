@@ -1,12 +1,13 @@
 <template>
-  <h1>AllCategories</h1>
-  <div class="storeCardList">
-    <OneCategory
-      v-for="category in categories"
-      :key="category"
-      :oneCategory="category"
-    />
-    <!-- <OneCategory v-for="item in itemToList" :key="item" /> -->
+  <div class="boxes" id="allCategoryBox">
+    <div class="storeCardList">
+      <OneCategory
+        v-for="category in categories"
+        :key="category"
+        :oneCategory="category"
+      />
+      <!-- <OneCategory v-for="item in itemToList" :key="item" /> -->
+    </div>
   </div>
 </template>
 
@@ -48,6 +49,9 @@ export default {
   },
 };
 </script>
-<!-- 
+
 <style lang="scss">
-</style> -->
+div#allCategoryBox {
+  border: 2px dashed black;
+}
+</style>

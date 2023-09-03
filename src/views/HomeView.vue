@@ -1,10 +1,11 @@
 <template>
-  <div id="titleBox">
+  <div class="boxes" id="titleBox">
     <div id="iconTeam"><img src="@/assets/family.png" alt="" /></div>
     <h1>Team Shop!!</h1>
   </div>
   <InputStore />
   <StoreList />
+  <div id="iconTeam"><img src="@/assets/team-work.png" alt="" /></div>
 </template>
 
 <script>
@@ -47,11 +48,7 @@ export default {
 
 <style scoped lang="scss">
 div#titleBox {
-  min-width: 300px;
-  background-color: rgb(248, 199, 199);
-  border-radius: 2rem;
-  margin: 1rem;
-  padding: 1rem;
+  border: 4px black solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,7 +59,8 @@ div#titleBox {
     img {
       display: block;
       margin: 0 auto;
-      width: 300px;
+      width: 90%;
+      max-width: 500px;
       height: auto;
     }
   }

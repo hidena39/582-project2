@@ -1,25 +1,33 @@
 <template>
-  <h1>InputCategoryAndList</h1>
-  <p>{{ storename }}</p>
-  <!-- send category -->
-  <form v-if="this.listuser.isAuthorized" @submit.prevent="sendCategoryToDB()">
-    <label for="category">Category</label>
-    <input type="text" id="category" required />
-    <input class="submit" type="submit" value="Add Category" />
-  </form>
-  <!-- send category and item -->
-  <form v-if="this.listuser.isAuthorized" @submit.prevent="sendItemToDB()">
-    <label for="categories">Categories</label>
-    <select name="categories" id="categories" required>
-      <option value="">Please Select</option>
-      <option v-for="category in categories" :key="category" :value="category">
-        {{ category }}
-      </option>
-    </select>
-    <label for="item">Item</label>
-    <input type="text" id="item" required />
-    <input class="submit" type="submit" value="Add Item to the List" />
-  </form>
+  <div class="boxes" id="inputListBox">
+    <h3>Add Category</h3>
+    <p>{{ storename }}</p>
+    <form
+      v-if="this.listuser.isAuthorized"
+      @submit.prevent="sendCategoryToDB()"
+    >
+      <label for="category">Category</label>
+      <input type="text" id="category" required />
+      <input class="submit" type="submit" value="Add Category" />
+    </form>
+    <h3>Add item</h3>
+    <form v-if="this.listuser.isAuthorized" @submit.prevent="sendItemToDB()">
+      <label for="categories">Categories</label>
+      <select name="categories" id="categories" required>
+        <option value="">Please Select</option>
+        <option
+          v-for="category in categories"
+          :key="category"
+          :value="category"
+        >
+          {{ category }}
+        </option>
+      </select>
+      <label for="item">Item</label>
+      <input type="text" id="item" required />
+      <input class="submit" type="submit" value="Add Item to the List" />
+    </form>
+  </div>
 </template>
 
 <script>
@@ -138,4 +146,8 @@ export default {
 };
 </script>
 
-<!-- <style lang="scss"></style> -->
+<style lang="scss">
+div#inputListBox {
+  border: 2px dashed black;
+}
+</style>

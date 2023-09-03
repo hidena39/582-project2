@@ -1,8 +1,8 @@
 <template>
   <li>
-    <div class="oneItem" @click="changeStatus">{{ oneItem }}</div>
-    <div>
-      <button
+    <div class="oneItem" @click="changeStatus">
+      {{ oneItem
+      }}<button
         class="deleteButton"
         v-if="this.listuser.isAuthorized"
         @click="deleteItem"
@@ -10,6 +10,7 @@
         delete
       </button>
     </div>
+
     <div
       class="purchased"
       v-if="purchaseStatus"

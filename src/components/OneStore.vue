@@ -1,16 +1,18 @@
 <template>
-  <div class="storeCard">
-    <p>{{ storeName }}</p>
-    <button
-      @click="
-        this.$router.push({
-          name: 'each-store',
-          params: { storename: storeName },
-        })
-      "
-    >
-      EachStore
-    </button>
+  <div
+    class="storeCard"
+    @click="
+      this.$router.push({
+        name: 'each-store',
+        params: { storename: storeName },
+      })
+    "
+  >
+    <div class="cardTextBox">
+      <span>visit</span>
+      <h3>{{ storeName }}</h3>
+      <span>list</span>
+    </div>
     <button
       class="deleteButton"
       v-if="this.listuser.isAuthorized"
@@ -37,13 +39,6 @@ export default {
     const listuser = useUserStore();
     return { liststore, listuser };
   },
-  // data() {
-  //     return {
-
-  //     };
-  // },
-  // components: {
-  // },
   methods: {
     deleteStore() {
       console.log("submitted");
@@ -80,7 +75,12 @@ export default {
 
 <style scoped lang="scss">
 div.storeCard {
-  width: 150px;
-  border: 1px solid blue;
+  border-radius: 1rem;
+  background: rgb(250, 250, 190);
+  border: black 2px solid;
+  cursor: pointer;
+  div.cardTextBox {
+    margin: 1rem 0 1rem 0;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="storeListBox">
+  <div class="boxes" id="storeListBox">
     <div class="storeCardList">
       <OneStore
         v-for="(store, index) in liststore.stores"
@@ -8,7 +8,6 @@
       />
     </div>
   </div>
-  <div id="iconTeam"><img src="@/assets/team-work.png" alt="" /></div>
 </template>
 
 <script>
@@ -23,15 +22,9 @@ export default {
     };
     return { liststore, currentStoreName };
   },
-  // data() {
-  //     return {
-  //     };
-  // },
   components: {
     OneStore,
   },
-  // method: {
-  // },
 };
 </script>
 <style scoped lang="scss">
@@ -39,24 +32,13 @@ body {
   display: grid;
 }
 div#storeListBox {
-  min-width: 300px;
-  background-color: rgb(199, 202, 248);
-  border-radius: 2rem;
-  margin: 1rem 1rem 0 1rem;
-  padding: 2rem;
-  justify-content: center;
+  border: 2px dashed black;
 }
 div.storeCardList {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(130px, 150px));
   grid-gap: 10px;
-  
-  border: 1px solid black;
-}
-img {
-  width: 80%;
-  height: auto;
-  margin: 0 auto;
+  justify-content: center;
 }
 </style>
