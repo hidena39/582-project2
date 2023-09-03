@@ -1,24 +1,26 @@
 <template>
-  <div
-    class="storeCard"
-    @click="
-      this.$router.push({
-        name: 'each-store',
-        params: { storename: storeName },
-      })
-    "
-  >
-    <div class="cardTextBox">
-      <span>visit</span>
-      <h3>{{ storeName }}</h3>
-      <span>list</span>
+  <div class="storeCard">
+    <div
+      id="storeCardRouter"
+      @click="
+        this.$router.push({
+          name: 'each-store',
+          params: { storename: storeName },
+        })
+      "
+    >
+      <div class="cardTextBox">
+        <span>visit</span>
+        <h3>{{ storeName }}</h3>
+        <span>list</span>
+      </div>
     </div>
     <button
       class="deleteButton"
       v-if="this.listuser.isAuthorized"
       @click="deleteStore"
     >
-      delete
+      delete store
     </button>
   </div>
 </template>
@@ -74,7 +76,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-div.storeCard {
+div#storeCardRouter {
+  width: 100%;
   border-radius: 1rem;
   background: rgb(250, 250, 190);
   border: black 2px solid;
@@ -82,5 +85,8 @@ div.storeCard {
   div.cardTextBox {
     margin: 1rem 0 1rem 0;
   }
+}
+button.deleteButton {
+  margin: 0.2rem auto 1rem auto;
 }
 </style>

@@ -94,6 +94,9 @@ export default {
 <style scoped lang="scss">
 .listcontainer {
   width: 100%;
+  button.deleteButton {
+    margin: 0.2rem auto 1rem auto;
+  }
 }
 div#itemContainer {
   width: 100%;

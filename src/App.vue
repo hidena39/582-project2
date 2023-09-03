@@ -85,8 +85,10 @@ button {
 .deleteButton {
   display: block;
   background: rgb(245, 181, 181);
+  z-index: 2;
 }
-input {
+input,
+select {
   display: block;
   width: 100%;
   border-radius: 1rem;

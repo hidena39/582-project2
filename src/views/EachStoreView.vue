@@ -1,9 +1,12 @@
 <template>
   <nav>
-    <router-link to="/"><button id="homeButton">Home</button></router-link>
+    <router-link to="/"
+      ><img id="homeImage" src="@/assets/looking-at-home.png" alt="" />
+      <div id="textHome">home</div></router-link
+    >
   </nav>
   <h2>{{ storename }}</h2>
-  <img src="@/assets/list.png" alt="" />
+  <img id="listImage" src="@/assets/list.png" alt="" />
 
   <InputCategoryAndList />
   <AllCategories />
@@ -56,7 +59,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
-img {
+nav {
+  position: relative;
+  width: 110px;
+  margin-left: 1rem;
+}
+img#homeImage {
+  width: 110px;
+  height: auto;
+}
+div#textHome {
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  color: white;
+}
+img#listImage {
   display: block;
   margin: 0 auto;
   width: 50vw;

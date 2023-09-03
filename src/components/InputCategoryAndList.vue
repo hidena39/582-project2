@@ -6,15 +6,13 @@
       v-if="this.listuser.isAuthorized"
       @submit.prevent="sendCategoryToDB()"
     >
-      <label for="category">Category</label>
-      <input type="text" id="category" required />
+      <input type="text" id="category" placeholder="Category Name" required />
       <input class="submit" type="submit" value="Add Category" />
     </form>
-    <h3>Add item</h3>
+    <h3 id="addItem">Add item</h3>
     <form v-if="this.listuser.isAuthorized" @submit.prevent="sendItemToDB()">
-      <label for="categories">Categories</label>
       <select name="categories" id="categories" required>
-        <option value="">Please Select</option>
+        <option value="">Please Select Category</option>
         <option
           v-for="category in categories"
           :key="category"
@@ -23,8 +21,7 @@
           {{ category }}
         </option>
       </select>
-      <label for="item">Item</label>
-      <input type="text" id="item" required />
+      <input type="text" id="item" placeholder="Item Name" required />
       <input class="submit" type="submit" value="Add Item to the List" />
     </form>
   </div>
@@ -60,14 +57,6 @@ export default {
       return allcategories;
     },
   },
-  // data() {
-  //     return {
-
-  //     };
-  // },
-  // components: {
-
-  // },
   methods: {
     sendCategoryToDB() {
       console.log("submitted");
@@ -147,6 +136,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+h3#addItem {
+  margin-top: 3rem;
+}
 div#inputListBox {
   border: 2px dashed black;
 }

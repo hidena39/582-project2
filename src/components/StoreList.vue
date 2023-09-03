@@ -37,7 +37,7 @@ div#storeListBox {
 div.storeCardList {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 150px));
+  grid-template-columns: repeat(auto-fit, 140px);
   grid-gap: 10px;
   justify-content: center;
 }

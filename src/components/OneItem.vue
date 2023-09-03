@@ -1,6 +1,6 @@
 <template>
   <div class="oneItem" @click="changeStatus">
-    {{ oneItem }}
+    <p>{{ oneItem }}</p>
     <button
       class="deleteButton"
       v-if="this.listuser.isAuthorized"
@@ -181,7 +181,9 @@ div.oneItem {
   background: white;
   border: black 2px solid;
   cursor: pointer;
-  padding: 1rem 1rem 0 1rem;
+  p {
+    margin: 1rem;
+  }
 }
 div.purchased {
   position: absolute;
