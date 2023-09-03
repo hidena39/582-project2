@@ -146,7 +146,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 div#inputListBox {
   border: 2px dashed black;
 }

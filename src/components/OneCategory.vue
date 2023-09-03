@@ -8,14 +8,14 @@
     >
       delete category
     </button>
-    <ul>
+    <div id="itemContainer">
       <OneItem
         v-for="item in items"
         :key="item.item"
         :oneItem="item.item"
         :oneCategory="oneCategory"
       />
-    </ul>
+    </div>
   </div>
 </template>
 
@@ -93,16 +93,13 @@ export default {
 
 <style scoped lang="scss">
 .listcontainer {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
 }
-li {
-  list-style: none;
-  display: block;
-}
-ul {
+div#itemContainer {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 150px);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, 120px);
+  grid-gap: 10px;
+  justify-content: center;
 }
 </style>

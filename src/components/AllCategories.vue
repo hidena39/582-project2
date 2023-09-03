@@ -6,8 +6,8 @@
         :key="category"
         :oneCategory="category"
       />
-      <!-- <OneCategory v-for="item in itemToList" :key="item" /> -->
     </div>
+    <img src="@/assets/collecting.png" alt="" />
   </div>
 </template>
 
@@ -21,17 +21,9 @@ export default {
     const liststore = useListStore();
     return { liststore };
   },
-  // data() {
-  //     return {
-
-  //     };
-  // },
   components: {
     OneCategory,
   },
-  // methods: {
-
-  // },
   computed: {
     categories() {
       const storeName = this.$route.params.storename;
@@ -50,8 +42,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 div#allCategoryBox {
   border: 2px dashed black;
+  height: fit-content;
+}
+img {
+  display: block;
+  margin-left: auto;
+  width: 50vw;
+  max-width: 500px;
+  height: auto;
 }
 </style>

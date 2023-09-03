@@ -1,6 +1,6 @@
 <template>
   <div class="boxes" id="titleBox">
-    <div id="iconTeam"><img src="@/assets/family.png" alt="" /></div>
+    <div id="iconFamily"><img src="@/assets/family.png" alt="" /></div>
     <h1>Team Shop!!</h1>
   </div>
   <InputStore />
@@ -53,7 +53,7 @@ div#titleBox {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  div#iconTeam {
+  div#iconFamily {
     width: 100%;
     height: auto;
     img {
@@ -63,6 +63,16 @@ div#titleBox {
       max-width: 500px;
       height: auto;
     }
+  }
+}
+div#iconTeam {
+  display: flex;
+  justify-content: center;
+  img {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
   }
 }
 </style>

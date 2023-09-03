@@ -1,24 +1,21 @@
 <template>
-  <li>
-    <div class="oneItem" @click="changeStatus">
-      {{ oneItem
-      }}<button
-        class="deleteButton"
-        v-if="this.listuser.isAuthorized"
-        @click="deleteItem"
-      >
-        delete
-      </button>
-    </div>
-
+  <div class="oneItem" @click="changeStatus">
+    {{ oneItem }}
+    <button
+      class="deleteButton"
+      v-if="this.listuser.isAuthorized"
+      @click="deleteItem"
+    >
+      delete
+    </button>
+    <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
     <div
       class="purchased"
       v-if="purchaseStatus"
       @click="changeStatus"
       :style="{ backgroundColor: colorOfThePurchased }"
     ></div>
-    <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
-  </li>
+  </div>
 </template>
 
 <script>
@@ -178,21 +175,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
-li {
+div.oneItem {
   position: relative;
-}
-.oneItem {
-  padding: 1rem;
-  border: black solid 2px;
+  border-radius: 1rem;
+  background: white;
+  border: black 2px solid;
   cursor: pointer;
+  padding: 1rem 1rem 0 1rem;
 }
-.purchased {
+div.purchased {
   position: absolute;
-  width: 150px;
-  height: 40px;
+  width: 120px;
+  height: 80px;
+  border-radius: 1rem;
   opacity: 0.5;
-  top: 0;
-  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  right: 50%;
   cursor: pointer;
 }
 .displayNone {

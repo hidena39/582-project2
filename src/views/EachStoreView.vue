@@ -2,8 +2,9 @@
   <nav>
     <router-link to="/"><button id="homeButton">Home</button></router-link>
   </nav>
-  <p>{{ this.$route.params }}</p>
   <h2>{{ storename }}</h2>
+  <img src="@/assets/list.png" alt="" />
+
   <InputCategoryAndList />
   <AllCategories />
 </template>
@@ -54,7 +55,13 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+img {
+  display: block;
+  margin: 0 auto;
+  width: 50vw;
+  max-width: 500px;
+}
 div#homeButton {
   display: block;
 }

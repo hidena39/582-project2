@@ -36,7 +36,7 @@ export default {
 //background
 div#mainBackground {
   margin-top: 1rem;
-  padding-top: 1rem;
+  padding: 1rem 0 1rem 0;
   min-height: calc(100vh - (3.4rem + 6px));
 }
 //font
@@ -50,7 +50,7 @@ h1 {
 }
 h2 {
   font-family: "Short Stack";
-  font-size: 1.5em;
+  font-size: 1.8em;
   text-align: center;
 }
 h3 {
