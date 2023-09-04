@@ -1,20 +1,22 @@
 <template>
   <div class="oneItem" @click="changeStatus">
-    <p>{{ oneItem }}</p>
-    <button
-      class="deleteButton"
-      v-if="this.listuser.isAuthorized"
-      @click="deleteItem"
-    >
-      delete
-    </button>
-    <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
+    <div class="itemBorder">
+      <p>{{ oneItem }}</p>
+      <button
+        class="deleteButton"
+        v-if="this.listuser.isAuthorized"
+        @click="deleteItem"
+      >
+        delete
+      </button>
+    </div>
     <div
       class="purchased"
       v-if="purchaseStatus"
       @click="changeStatus"
       :style="{ backgroundColor: colorOfThePurchased }"
     ></div>
+    <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
   </div>
 </template>
 
@@ -177,6 +179,9 @@ export default {
 <style scoped lang="scss">
 div.oneItem {
   position: relative;
+}
+div.itemBorder {
+  width: 100%;
   border-radius: 1rem;
   background: white;
   border: black 2px solid;
@@ -196,7 +201,7 @@ div.purchased {
   right: 50%;
   cursor: pointer;
 }
-.displayNone {
-  display: none;
+div.purchasedTime {
+  margin: 0 auto;
 }
 </style>
