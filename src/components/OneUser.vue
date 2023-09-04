@@ -62,8 +62,11 @@ export default {
 <style scoped lang="scss">
 .userButton {
   margin: 0 1rem;
+  &:hover {
+    border: 3px solid white;
+  }
 }
 .chosenUser {
-  border: 3px solid black;
+  border: 4px solid black;
 }
 </style>

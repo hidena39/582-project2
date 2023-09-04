@@ -9,13 +9,13 @@
       >
         delete
       </button>
+      <div
+        class="purchased"
+        v-if="purchaseStatus"
+        @click="changeStatus"
+        :style="{ backgroundColor: colorOfThePurchased }"
+      ></div>
     </div>
-    <div
-      class="purchased"
-      v-if="purchaseStatus"
-      @click="changeStatus"
-      :style="{ backgroundColor: colorOfThePurchased }"
-    ></div>
     <div class="purchasedTime" v-if="purchaseStatus">{{ purchasedTime }}</div>
   </div>
 </template>
@@ -177,10 +177,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-div.oneItem {
-  position: relative;
-}
 div.itemBorder {
+  position: relative;
   width: 100%;
   border-radius: 1rem;
   background: white;
@@ -197,11 +195,18 @@ div.purchased {
   border-radius: 1rem;
   opacity: 0.5;
   top: 50%;
-  transform: translate(50%, -50%);
   right: 50%;
+  transform: translate(50%, -50%);
   cursor: pointer;
+  @media screen and (min-width: 750px) {
+    width: 150px;
+  }
+  @media screen and (min-width: 900px) {
+    width: 180px;
+  }
 }
 div.purchasedTime {
-  margin: 0 auto;
+  font-size: 0.8rem;
+  text-align: center;
 }
 </style>

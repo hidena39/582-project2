@@ -100,7 +100,7 @@ export default {
 }
 div#itemContainer {
   width: 100%;
-  margin-top: 1rem;
+  margin: 1rem 0 1.5rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
   grid-gap: 10px;

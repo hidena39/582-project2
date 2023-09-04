@@ -99,7 +99,7 @@ select {
   width: 100%;
   max-width: 300px;
   border-radius: 1rem;
-  padding: 0.2rem 2rem;
+  padding: 0.2rem 1.5rem;
   margin: 1rem auto;
 }
 input.submit {
