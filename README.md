@@ -2,7 +2,7 @@
 
 ## Project's title
 
-Shopping List
+Team Shop!!
 
 ## About Me
 
@@ -12,15 +12,15 @@ I am a web design student.
 
 This app is made to learn the framework Vue.JS using Pinia, and MongoDB using node.js.
 
-This is an app for a family to share a shopping list. Admin(such as parents) can add, and delete items. Users(such as kids) can only mark the list as purchased. This will prevent the kids from adding unnecessary items to the list, or deleting unwanted items from the list. But parents can still ask kids to help with the shopping.
+This is an app for a family to share a shopping list to get the shopping done quickly. Admin(such as parents) can add, and delete items. Users(such as kids) can only mark the list as purchased along with the date and the time. This will prevent the users from adding unnecessary items to the list, or deleting unwanted items from the list.
 
-There are
-
+- There could be multiple admins and users
+- Each admins/users have their color in the database and the background color of the app will be the color of the user
 - Admin function: Add and delete stores from the database
 - Admin function: Add and delete items from the database
 - All users: View the list
-- All users: Mark items as purchased and add the purchased date in the database
-- In the list page, users can see the storename in the url
+- All users: Mark items as purchased and add the purchased date and time in the database
+- In the list page of the each store, users can see the storename in the url
 
 ## To do list
 
@@ -28,11 +28,25 @@ There are
 - [x] Draft the plan on paper (draw the relationship between files)
 - [x] Created the connection in the Github codespace
 - [x] Create files
-- [] Create Unit tests
-- [] Code the app
-- [] Code and run unit tests
-- [] Style (responsive design)
-- [] Make Readme.md
+- [x] Code the app
+- [] Code and run unit tests (attempted)
+- [x] Style (responsive design)
+- [x] Make Readme.md
+
+## How to Install and Run
+
+1. Start 582-project2-codespace "reimagined eureka" in Github codespace
+2. On this code space, run `node insdex.js` and set port visibility to public
+3. Clone, pull or download this repository
+4. Open the folder in VS Code
+5. Install dependencies with `npm install`
+6. Install pinia with `npm install pinia --save`
+7. Run the app with `npm run serve`
+8. Go to `http://localhost:8080/` or any other port given in your browser
+
+## License
+
+No license. The default copyright laws apply to this project.
 
 ## Project setup
 
