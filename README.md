@@ -29,7 +29,7 @@ This is an app for a family to share a shopping list to get the shopping done qu
 - [x] Created the connection in the Github codespace
 - [x] Create files
 - [x] Code the app
-- [] Code and run unit tests (attempted)
+- Code and run unit tests (attempted)
 - [x] Style (responsive design)
 - [x] Make Readme.md
 
