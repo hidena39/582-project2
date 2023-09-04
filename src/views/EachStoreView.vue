@@ -1,15 +1,16 @@
 <template>
-  <nav>
-    <router-link to="/"
-      ><img id="homeImage" src="@/assets/looking-at-home.png" alt="" />
-      <div id="textHome">home</div></router-link
-    >
-  </nav>
-  <h2>{{ storename }}</h2>
-  <img id="listImage" src="@/assets/list.png" alt="" />
-
-  <InputCategoryAndList />
-  <AllCategories />
+  <div class="listPageContainer">
+    <nav>
+      <router-link to="/"
+        ><img id="homeImage" src="@/assets/looking-at-home.png" alt="" />
+        <div id="textHome">home</div></router-link
+      >
+    </nav>
+    <h2>{{ storename }}</h2>
+    <img id="listImage" src="@/assets/list.png" alt="" />
+    <InputCategoryAndList />
+    <AllCategories />
+  </div>
 </template>
 
 <script>
@@ -59,6 +60,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+div.listPageContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 nav {
   position: relative;
   width: 110px;
@@ -78,7 +83,7 @@ img#listImage {
   display: block;
   margin: 0 auto;
   width: 50vw;
-  max-width: 500px;
+  max-width: 200px;
 }
 div#homeButton {
   display: block;

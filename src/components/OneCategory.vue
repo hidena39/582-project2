@@ -95,14 +95,23 @@ export default {
 .listcontainer {
   width: 100%;
   button.deleteButton {
-    margin: 0.2rem auto 1rem auto;
+    margin: 0.2rem auto 0 auto;
   }
 }
 div#itemContainer {
   width: 100%;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
   grid-gap: 10px;
   justify-content: center;
+  @media screen and (min-width: 750px) {
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-gap: 12px;
+  }
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(auto-fit, 180px);
+    grid-gap: 14px;
+  }
 }
 </style>

@@ -51,7 +51,7 @@ img {
   display: block;
   margin-left: auto;
   width: 50vw;
-  max-width: 500px;
+  max-width: 200px;
   height: auto;
 }
 </style>

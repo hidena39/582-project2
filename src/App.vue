@@ -42,6 +42,12 @@ div#mainBackground {
 //font
 html {
   font-size: 16px;
+  @media screen and (min-width: 750px) {
+    font-size: 17px;
+  }
+  @media screen and (min-width: 900px) {
+    font-size: 18px;
+  }
 }
 h1 {
   font-family: "Short Stack";
@@ -91,6 +97,7 @@ input,
 select {
   display: block;
   width: 100%;
+  max-width: 300px;
   border-radius: 1rem;
   padding: 0.2rem 2rem;
   margin: 1rem auto;

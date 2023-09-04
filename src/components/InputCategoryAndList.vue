@@ -1,16 +1,13 @@
 <template>
-  <div class="boxes" id="inputListBox">
+  <div class="boxes" id="inputListBox" v-if="this.listuser.isAuthorized">
     <h3>Add Category</h3>
     <p>{{ storename }}</p>
-    <form
-      v-if="this.listuser.isAuthorized"
-      @submit.prevent="sendCategoryToDB()"
-    >
+    <form @submit.prevent="sendCategoryToDB()">
       <input type="text" id="category" placeholder="Category Name" required />
       <input class="submit" type="submit" value="Add Category" />
     </form>
     <h3 id="addItem">Add item</h3>
-    <form v-if="this.listuser.isAuthorized" @submit.prevent="sendItemToDB()">
+    <form @submit.prevent="sendItemToDB()">
       <select name="categories" id="categories" required>
         <option value="">Please Select Category</option>
         <option

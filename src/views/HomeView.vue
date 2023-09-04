@@ -1,11 +1,13 @@
 <template>
-  <div class="boxes" id="titleBox">
-    <div id="iconFamily"><img src="@/assets/family.png" alt="" /></div>
-    <h1>Team Shop!!</h1>
+  <div class="homePageContainer">
+    <div class="boxes" id="titleBox">
+      <div id="iconFamily"><img src="@/assets/family.png" alt="" /></div>
+      <h1>Team Shop!!</h1>
+    </div>
+    <InputStore />
+    <StoreList />
+    <div id="iconTeam"><img src="@/assets/team-work.png" alt="" /></div>
   </div>
-  <InputStore />
-  <StoreList />
-  <div id="iconTeam"><img src="@/assets/team-work.png" alt="" /></div>
 </template>
 
 <script>
@@ -47,6 +49,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+div.homePageContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 div#titleBox {
   border: 4px black solid;
   display: flex;
@@ -60,7 +66,7 @@ div#titleBox {
       display: block;
       margin: 0 auto;
       width: 90%;
-      max-width: 500px;
+      max-width: 300px;
       height: auto;
     }
   }

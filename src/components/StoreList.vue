@@ -40,5 +40,13 @@ div.storeCardList {
   grid-template-columns: repeat(auto-fit, 140px);
   grid-gap: 10px;
   justify-content: center;
+  @media screen and (min-width: 750px) {
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-gap: 12px;
+  }
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(auto-fit, 180px);
+    grid-gap: 14px;
+  }
 }
 </style>
