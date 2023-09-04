@@ -53,3 +53,5 @@ describe("OneItem.vue", () => {
     expect(wrapper.find("h3").text()).toBe("produce");
   });
 });
+// delete button delete the chosen category
+//delete button hides when the user is not authorized

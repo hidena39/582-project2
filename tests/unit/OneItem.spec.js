@@ -53,3 +53,7 @@ describe("OneItem.vue", () => {
     expect(wrapper.find("p").text()).toBe("tofu");
   });
 });
+// methods deleteItem is triggered when the button is clicked
+// if the delete button hides when the user is not authorized
+// purchaseStatus changes when the item is clicked
+// div.purchased and div.purchasedTime hide/show with purchasedStatus
