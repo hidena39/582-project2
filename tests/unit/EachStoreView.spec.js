@@ -1,8 +1,8 @@
 import { shallowMount } from "@vue/test-utils";
 import EachStoreView from "@/views/EachStoreView.vue";
 import { setActivePinia, createPinia } from "pinia";
-import { useUserStore } from "@/store/userlist.js";
-import { useListStore } from "@/store/storelist.js";
+// import { useUserStore } from "@/store/userlist.js";
+// import { useListStore } from "@/store/storelist.js";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
