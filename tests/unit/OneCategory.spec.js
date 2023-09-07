@@ -2,7 +2,7 @@ import { shallowMount } from "@vue/test-utils";
 import OneCategory from "@/components/OneCategory.vue";
 import { setActivePinia, createPinia } from "pinia";
 // import { useUserStore } from "@/store/userlist.js";
-import { useListStore } from "@/store/storelist.js";
+// import { useListStore } from "@/store/storelist.js";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
